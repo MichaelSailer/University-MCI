@@ -1,6 +1,8 @@
 var index = 1;
+var timer = setInterval(goRight,3000);
 
 function goRight(){
+    console.log("Hello");
     let img_old = document.getElementById("pic");
 
     index ++;
@@ -20,7 +22,4 @@ function goRight(){
             img_old.src = "../img/4.jpg";
         break;
     }
-
-
-
 }

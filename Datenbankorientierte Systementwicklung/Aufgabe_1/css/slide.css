@@ -22,6 +22,7 @@ button{
     margin-top: auto;
     margin-bottom: auto;
     width: 40px;
+    position: sticky;
 }
 #left{
     margin-left: 10px;
