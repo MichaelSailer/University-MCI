@@ -1,0 +1,117 @@
+img {
+    width: 150px;
+    height: 150px;
+}
+
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    background-image: linear-gradient(to right, #707078, #7a93ac);
+    font-family: sans-serif;
+}
+
+.header{
+    display: inline-block;
+    width: 100%;
+
+}
+#logo{
+    text-transform: lowercase;
+    text-align: left;
+    font-size: medium;
+    width: 50px;
+}
+#titel {
+    text-transform: uppercase;
+    text-align: center;    
+    font-size: xx-large;
+}
+
+.main {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 200px;
+    width: 90%;
+}
+
+#text1,
+#text2 {
+    vertical-align: top;
+    margin-top: 30px;
+    display: inline-block;
+    width: 50%;
+}
+
+#bild1,
+#bild2 {
+    display: inline-block;
+    width: calc(50% - 250px);
+    margin-top: 5px;
+    text-align: center;
+}
+
+#bild2 {
+    margin-left: 10%;
+}
+
+#text1 {
+    margin-left: 10%;
+}
+
+
+.nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #72a1c7;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+.menu {
+    text-align: center;
+}
+
+.menu:hover {
+    background-color: #59656f;
+    color: white;
+}
+
+img:hover {
+    width: 250px;
+    height: 250px;
+}
+
+#text1:hover {
+    font-size: 24px;
+}
+
+#text2:hover {
+    font-size: 24px;
+}
+
+#open{
+    font-size:30px;
+    left:0px;
+    top:0px;
+    margin-left: 20px;
+    cursor:pointer;
+
+}
+
