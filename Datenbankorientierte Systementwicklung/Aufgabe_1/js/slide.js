@@ -2,7 +2,6 @@ var index = 1;
 var timer = setInterval(goRight,3000);
 
 function goRight(){
-    console.log("Hello");
     let img_old = document.getElementById("pic");
 
     index ++;

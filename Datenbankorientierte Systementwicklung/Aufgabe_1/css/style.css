@@ -1,68 +1,33 @@
-img {
-    width: 150px;
-    height: 150px;
-}
-
-
-html {
-    width: 100%;
-}
 
 body {
-    width: 100%;
-    background-image: linear-gradient(to right, #707078, #7a93ac);
-    font-family: sans-serif;
+    background-image: linear-gradient(to left, grey, #7a93ac);
+    font-family: 'Montserrat', sans-serif;
 }
 
-.header{
+.header {
     display: inline-block;
     width: 100%;
 
 }
-#logo{
+
+#logo {
     text-transform: lowercase;
     text-align: left;
     font-size: medium;
     width: 50px;
 }
+
 #titel {
     text-transform: uppercase;
-    text-align: center;    
+    text-align: center;
     font-size: xx-large;
 }
 
 .main {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 200px;
-    width: 90%;
+    display: block;
+    margin-top: 100px;
+    width: 100%;
 }
-
-#text1,
-#text2 {
-    vertical-align: top;
-    margin-top: 30px;
-    display: inline-block;
-    width: 50%;
-}
-
-#bild1,
-#bild2 {
-    display: inline-block;
-    width: calc(50% - 250px);
-    margin-top: 5px;
-    text-align: center;
-}
-
-#bild2 {
-    margin-left: 10%;
-}
-
-#text1 {
-    margin-left: 10%;
-}
-
-
 .nav {
     height: 100%;
     width: 0;
@@ -75,6 +40,7 @@ body {
     transition: 0.5s;
     padding-top: 60px;
 }
+
 .nav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -82,7 +48,7 @@ body {
     color: #818181;
     display: block;
     transition: 0.3s;
-  }
+}
 
 .menu {
     text-align: center;
@@ -93,25 +59,52 @@ body {
     color: white;
 }
 
-img:hover {
-    width: 250px;
-    height: 250px;
-}
 
-#text1:hover {
-    font-size: 24px;
-}
 
-#text2:hover {
-    font-size: 24px;
-}
-
-#open{
-    font-size:30px;
-    left:0px;
-    top:0px;
+#open {
+    font-size: 30px;
+    left: 0px;
+    top: 0px;
     margin-left: 20px;
-    cursor:pointer;
+    cursor: pointer;
 
 }
 
+
+.show {
+    width: 100%;
+    display: flex;
+}
+
+#pic {
+    width: 50%;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    height: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 40px;
+    position: sticky;
+    background-color: #254863;
+    color: wheat;   
+    border-radius: 5px;
+    border: none;
+}
+
+
+#left {
+    margin-left: 10px;
+}
+
+#right {
+    margin-right: 10px;
+}
+
+#slide{
+    text-align: center;
+}
