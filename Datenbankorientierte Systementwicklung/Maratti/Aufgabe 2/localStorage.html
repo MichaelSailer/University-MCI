@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- Datenbankorientierte Systementwicklung -->
+<html>
+<head>    
+    <title>Web Storage - localStorage</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<h1>Erstes Beispiel - Web Storage</h1>
+<!-- Javascript Code -->
+<script type="text/javascript">
+
+if(typeof(Storage) !== "undefined") {
+	   
+   localStorage.vorname = "Bernhard";
+   alert(localStorage.vorname);
+   
+   var object = {
+	   thema: "Webstorage",
+	   uebung: "eins"
+   };
+   
+   localStorage.vorlesung = JSON.stringify(object);
+   console.log(localStorage.vorlesung);
+   
+   vorlesung = JSON.parse(localStorage.vorlesung);
+   console.log(vorlesung);
+   
+   sessionStorage.vorname = "Mustername";
+   alert(sessionStorage.vorname);
+   
+} else {
+	alert("Leider kein WebStorage");
+}
+
+</script>
+</body>
+</html>

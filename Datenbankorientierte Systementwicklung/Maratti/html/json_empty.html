@@ -44,6 +44,8 @@
         //Hinzufügen der neuen Zutat
         rezept.zutaten.push(newZ);
 
+        localStorage.newZutat = JSON.stringify(rezept);
+
         //Ausgabe Text wird definiert
         for(let i=0; i< rezept.zutaten.length; i++){
             ausgabeText += rezept.zutaten[i] + "<br>";
@@ -53,6 +55,21 @@
         //Ausgabe im DIV
         ausgabe.innerHTML = ausgabeText;
     }
+    function checkCookingStatus(state){
+        sessionStorage.KochenStarten = state;
+
+        if (sessionStorage.KochenStarten === "true") {
+            document.getElementById("stopCooking").style.visibility = "visible";
+            document.getElementById("startCooking").style.visibility = "hidden";
+        }else{
+            document.getElementById("startCooking").style.visibility = "visible";
+            document.getElementById("stopCooking").style.visibility = "hidden";           
+        }        
+    }
+
+
+    checkCookingStatus(sessionStorage.KochenStarten);
+
 
 </script>
 <body>
@@ -61,7 +78,8 @@
     <p> Geben sie eine neue Zutat ein</p>
     <input type="text" id="neueZutat">
     <button onclick="add()">Hit to add</button>
-
+    <button id="startCooking" onclick="checkCookingStatus(true)">Kochen Starten</button>
+    <button id="stopCooking" onclick="checkCookingStatus(false)" style="visibility: hidden;">Kochen Stoppen</button>
     <div id="ausgabe"></div>
 
 </body>

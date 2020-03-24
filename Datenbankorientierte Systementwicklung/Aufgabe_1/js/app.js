@@ -4,7 +4,19 @@ const text = [
   "Das ist Text eins",
   "Das ist Text zwei",
   "Das ist Text drei",
-  "Das ist Text vier"
+  "Das ist Text vier",
+  "Das ist Text fünf",
+  "Das ist Text sechs",
+  "Das ist Text sieben",
+  "Das ist Text acht",
+  "Das ist Text neun",
+  "Das ist Text zehn",
+  "Das ist Text elf",
+  "Das ist Text zwölf",
+  "Das ist Text dreizehn",
+  "Das ist Text vierzehn",
+  "Das ist Text fünfzehn",
+  "Das ist Text sechszehn"
 ]
 
 
@@ -21,57 +33,25 @@ function goRight() {
   let text_old = document.getElementById("slideText");
 
   index++;
-  if (index > 4) {
-    index = 1
+  if (index > 16) {
+    index = 1;
   }
-
-  switch (index) {
-    case 1:
-      img_old.src = "../img/1.jpg";
-      text_old.innerHTML = text[0];
-      break;
-    case 2:
-      img_old.src = "../img/2.png";
-      text_old.innerHTML = text[1];
-      break;
-    case 3:
-      img_old.src = "../img/3.jpg";
-      text_old.innerHTML = text[2];
-      break;
-    case 4:
-      img_old.src = "../img/4.jpg";
-      text_old.innerHTML = text[3];
-      break;
-  }
+  img_old.src = "../img/"+index+".jpeg";
+  text_old.innerHTML = text[index-1];
+  
 }
-
 
 function goLeft(){
   let img_old = document.getElementById("pic");
+  let text_old = document.getElementById("slideText");
 
   index--;
   if (index == 0) {
-    index = 4
+    index = 16;
   }
 
-  switch (index) {
-    case 1:
-      img_old.src = "../img/1.jpg";
-      text_old.innerHTML = text[0];
-      break;
-    case 2:
-      img_old.src = "../img/2.png";
-      text_old.innerHTML = text[1];
-      break;
-    case 3:
-      img_old.src = "../img/3.jpg";
-      text_old.innerHTML = text[2];
-      break;
-    case 4:
-      img_old.src = "../img/4.jpg";
-      text_old.innerHTML = text[3];
-      break;
-  }
+  img_old.src= "../img/" + index+".jpeg";
+  text_old.innerHTML = text[index -1];
 
 }
 
