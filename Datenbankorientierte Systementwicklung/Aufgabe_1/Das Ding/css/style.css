@@ -1,0 +1,175 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: cadetblue;
+}
+nav{
+    position: fixed;
+    width: 70px;
+    background-color: cornflowerblue;
+    height: 100%;
+    transition: 100ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.nav-link{
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    left: 0;
+    width: 80%;
+    font-size: 25px;
+    height: 30px;
+    text-align: left;
+    margin-left: 1rem;
+
+}
+.nav-link:last-child(){
+    margin-top: auto;
+    background-color: brown;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+    visibility: hidden;
+    font-size: 15px;
+    text-align: right;
+    width: 100%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width:  100%;
+    text-align: center;
+}
+
+.nav:hover{
+    background-color: blueviolet;
+    width: 200px;
+}
+
+.nav:hover a{
+    visibility: visible;
+}
+
+
+.nav-link:hover .symbol{
+    background-color: darkblue;
+    color: white;
+}
+.nav-link:hover{
+    background-color: darkblue;
+}
+
+
+#nav-logo{
+    justify-items: right;
+    margin-left: 10px;
+    width: 30px;
+}
+
+
+.nav:hover #nav-logo{
+    transform: rotate(-180deg);
+}
+
+.nav-link:first-child{
+    text-align: right;
+    transform: translate();
+}
+
+.headline{
+    margin: 0;
+    width: 100%;
+    font-size: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.headline .title{
+    text-align: center;
+    flex: 2;
+}
+
+#nav-logo{
+    transform:  rotate(0deg);
+    transition: 600ms ease;
+    margin-right: 5px;
+    font-size: 2rem;
+}
+
+
+.slide{
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: auto;
+    margin-top: auto;    
+}
+
+.slide button{
+    height:3rem;
+    width: 3rem;
+    font-size: 20px;
+    background-color: cornflowerblue;
+    border-radius: 8px;
+    border: 3px solid cornflowerblue ;
+}
+
+.slide button:hover{
+    background-color: cyan; 
+}
+
+.slide img{
+    height:500px;
+    width: 800px;;
+}
+img.img {
+    border-radius: 10px;
+  }
+
+#bulb{
+    color: yellow;
+}
+
+.logo{
+    margin-right: 20px;
+}
+
+.personen{
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items:center;
+    margin-top: 30px;
+    
+}
+
+.michael{
+    background-color: cornflowerblue;
+    width: 500px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.iris{
+    background-color: darkgoldenrod;
+    width: 500px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.lukas{
+    background-color: darkseagreen;
+    width: 500px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
