@@ -81,13 +81,7 @@ body {
     display: flex;
 }
 
-#pic {
-    width: 900px;
-    height: 500px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 button {
     height: 50px;
@@ -119,4 +113,46 @@ footer{
     position: absolute;
     bottom: 0px;
     width: 99%;
+}
+
+@media screen and (max-width: 600px){
+
+    #pic {
+        width: 300px;
+        height: 200px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #open{
+        visibility: hidden;
+    }
+    .nav{
+        width: 400px;
+        overflow-x: visible;
+        display: flex;
+        flex-direction: row;
+        bottom: 0;
+        width:  100vw;
+        height: 4rem;
+        
+    }
+
+
+    .closebtn{
+        visibility: hidden;
+    }
+}
+
+
+
+@media screen and (min-width: 1300px){
+    #pic {
+        width: 900px;
+        height: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Datenbankorientierte Systementwicklung -->
+<html>
+
+<head>
+    <title>Web Storage</title>
+    <meta charset="utf-8">
+	<style>
+		body {
+		    font-family: Arial, sans-serif;
+		}
+
+		div#language_selection {
+		    text-align: center;
+			visibility: hidden;
+		}
+		
+		div#main {
+		    text-align: center;
+			visibility: hidden;
+		}
+
+		div#header {
+		    text-align: right;
+		}
+		
+	</style>
+
+
+</head>
+
+<body>
+    <div id="language_selection">
+        <h1>Du bist das erste Mal hier?</h1>
+   		<p>Wähle zuerst eine Sprache aus</p>
+        <img src="flagge-gb.gif" height="80"  onclick="saveLanguage('english')"/>&nbsp;
+		<img src="flagge-at.gif" height="80" onclick="saveLanguage('german')"/>
+	</div>
+	
+    <div id="main">
+        <div id="header">
+			<img id="flagge-gb" src="flagge-gb.gif" height="30" />&nbsp;
+			<img id="flagge-at" src="flagge-at.gif" height="30" />
+		</div>
+		<h1 id="welcometext">Willkommen!</h1>
+		<div class="input">
+			<p>Vorname</p><input type="text" id="vorname" placeholder="Max">
+			<p>Nachname</p><input type="text" id="nachname" placeholder="Mustermann">
+			<p>E-Mail</p><input type="text" id="email" placeholder="Max.Mustermann@aon.at">
+			<p>Nickname</p><input type="text" id="nickname" placeholder="Maxi"> 
+			<p>Lieblingsfarbe</p>	
+			<select id="farbe">
+				<option>Orange</option>
+				<option>White</option>
+				<option>Blue</option>
+			</select>
+
+			<button onclick="saveInput()">Login</button>
+			<button onclick="deleteAll()">Delete Local Storeage</button>
+			
+		</div>
+	</div>
+	
+	<script src="app.js"></script>
+</body>
+
+</html>

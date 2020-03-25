@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<script>
 
     // Rezept Definition
     var rezept = {
@@ -56,8 +47,7 @@
         ausgabe.innerHTML = ausgabeText;
     }
     function checkCookingStatus(state){
-        sessionStorage.KochenStarten = state;
-
+        sessionStorage.KochenStarten = state
         if (sessionStorage.KochenStarten === "true") {
             document.getElementById("stopCooking").style.visibility = "visible";
             document.getElementById("startCooking").style.visibility = "hidden";
@@ -68,19 +58,4 @@
     }
 
 
-    checkCookingStatus(sessionStorage.KochenStarten);
-
-
-</script>
-<body>
-    <h1>Pizza eingabe</h1>
-
-    <p> Geben sie eine neue Zutat ein</p>
-    <input type="text" id="neueZutat">
-    <button onclick="add()">Hit to add</button>
-    <button id="startCooking" onclick="checkCookingStatus(true)">Kochen Starten</button>
-    <button id="stopCooking" onclick="checkCookingStatus(false)" style="visibility: hidden;">Kochen Stoppen</button>
-    <div id="ausgabe"></div>
-
-</body>
-</html>
+checkCookingStatus(sessionStorage.KochenStarten)

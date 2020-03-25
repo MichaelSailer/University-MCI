@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <h1>Pizza eingabe</h1>
+    <p> Geben sie eine neue Zutat ein</p>
+    <input type="text" id="neueZutat">
+    <button onclick="add()">Hit to add</button>
+    <button id="startCooking" onclick="checkCookingStatus(true)">Kochen Starten</button>
+    <button id="stopCooking" onclick="checkCookingStatus(false)" >Kochen Stoppen</button>
+    <div id="ausgabe"></div>
+    <script src="app.js"></script>
+
+</body>
+</html>
