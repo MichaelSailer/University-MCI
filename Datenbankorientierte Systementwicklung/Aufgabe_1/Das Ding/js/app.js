@@ -29,7 +29,7 @@ function goRight() {
       index = 1;
     }
     img_old.src = "../img/"+index+".jpeg";
-    text_old.innerHTML = text[index-1];
+    text_old.innerHTML = text[index];
     
   }
   
