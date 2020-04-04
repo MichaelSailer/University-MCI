@@ -1,0 +1,217 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #f5f5f5 ;
+}
+nav {
+  position: fixed;
+  width: 70px;
+  background-color: #F7882F;
+  height: 100%;
+  transition: 100ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.nav-link {
+  list-style: none;
+  padding: 0;
+  align-items: center;
+  left: 0;
+  width: 80%;
+  font-size: 25px;
+  height: 30px;
+  text-align: left;
+  margin-left: 1rem;
+  color: #6B7A8F;
+}
+.nav-link:last-child() {
+  margin-top: auto;
+  background-color: brown;
+}
+
+a {
+  text-decoration: none;
+  color: #6B7A8F;
+  margin-left: 1rem;
+  visibility: hidden;
+  font-size: 16px;
+  text-align: right;
+  width: 100%;
+}
+a:hover {
+  color: white;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #6B7A8F;
+}
+
+.nav:hover {
+  width: 200px;
+}
+
+.nav:hover a {
+  visibility: visible;
+}
+
+
+#nav-logo i {
+  justify-items: right;
+  margin-left: 10px;
+  width: 30px;
+  color: #6B7A8F
+}
+
+.nav:hover #nav-logo i {
+  transform: rotate(-180deg);
+}
+
+.nav-link:first-child {
+  text-align: right;
+  transform: translate();
+}
+
+.headline {
+  margin: 0px;
+  width: 100%;
+  font-size: 35px;
+  display: flex;
+  justify-content: space-between;
+  color: #6B7A8F;
+  
+
+}
+.headline .title {
+  text-align: center;
+  flex: 2;
+  font-family: New Century Schoolbook, serif; 
+}
+#nav-logo {
+  width: 100%;
+  color: #6B7A8F;
+}
+
+#nav-logo i {
+  transform: rotate(0deg);
+  transition: 600ms ease;
+  margin-right: 5px;
+  font-size: 2rem;
+  float: right;
+}
+
+.slide {
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.slide button {
+  height: 3rem;
+  width: 3rem;
+  font-size: 25px;
+  color: #6B7A8F;
+  background-color: #F7C331;
+  border-radius: 8px;
+  border: 3px solid #F7C331;
+}
+
+.slide button:hover {
+  background-color: #FCDC85;
+}
+
+.slide img {
+  height: 500px;
+  width: 800px;
+}
+img.img {
+  border-radius: 10px;
+}
+
+#bulb {
+  color: #F7C331;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.personen {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.michael {
+  background-color: #6B7A8F;
+  width: 500px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.iris {
+  background-color: #F7882F;
+  width: 500px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.lukas {
+  background-color: #F7C331;
+  width: 500px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.technischeDaten {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tabelle thead {
+  background-color: #6B7A8F;
+  color: white;
+  font-size: 30px;
+}
+
+.beschreibung {
+  font-weight: bold;
+}
+
+.tabelle tbody tr td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #6B7A8F;
+}
+
+.tabelle tbody tr:nth-of-type(even) {
+  color: #6B7A8F;
+}
+.tabelle tbody tr:nth-of-type(odd) {
+  background-color: #F7C331;
+  color: #6B7A8F;
+}
+
+.tabelle {
+  border: 3.5px solid #6B7A8F;
+  border-collapse: collapse;
+  font-family: serif;
+  font-size: 0.9em;
+  width: 50%;
+  text-align: left;
+  margin-top: 3rem;
+}
