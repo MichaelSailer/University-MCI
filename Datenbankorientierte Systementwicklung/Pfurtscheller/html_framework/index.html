@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>WebSQL | Datenbankorientiere Systementwicklung</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript">
+		function hideOthers(obj) {
+			var navigationsleiste = new Array("home", "create", "listing");
+			var temp = null;
+			for (var i = 0; i < navigationsleiste.length; i++) {
+				temp = navigationsleiste[i];
+				var element = document.getElementById(temp);
+				if (element != null) {
+					if (obj != temp) {
+						element.style.display = 'none';
+					} else {
+						element.style.display = 'block';
+					}
+				}
+			}
+			init()
+		}
+		var db = null;
+
+		function openDB() {
+			db = openDatabase(
+				"myDB",
+				"1.0",
+				"Datenbankorientierte Systementwicklung",
+				1 * 1024 * 1024
+			);
+		}
+
+		function createTable(tx) {
+			tx.executeSql(
+				"CREATE TABLE IF NOT EXISTS Kontakte(id integer NOT NULL PRIMARY KEY AUTOINCREMENT, vorname varchar(255) not Null, nachname varchar(255) not Null)",
+				[],
+				SQLSuccess,
+				SQLFail
+			);
+			console.log(tx);
+		}
+
+		function dropTable(tx) {
+			tx.executeSql("DROP TABLE IF EXISTS Kontakte", [], SQLSuccess, SQLFail);
+		}
+
+		function SQLSuccess() {
+			console.log("Es war erfoglreich");
+		}
+
+		function SQLFail() {
+			console.log("Es war nicht erfoglreich");
+		}
+
+		function addKonatke(tx) {
+			console.log(tx);
+			let vorname = document.getElementById("vorname").value;
+			let nachname = document.getElementById("nachname").value;
+
+			tx.executeSql(
+				"INSERT INTO Kontakte(vorname,nachname)  VALUES (?,?)", [vorname, nachname], displayResult, SQLFail
+			);
+			hideOthers("listing");
+		}
+
+		function getAllKontakte(tx) {
+			tx.executeSql("SELECT * FROM Kontakte", [], displayResult, SQLFail)
+		}
+
+		function displayResult(tx, res) {
+			let htmlText = "<table>"
+			console.log(res.rows);
+			let arr = res.rows;
+			for (let i = 0; i < arr.length; i++) {
+				htmlText += "<tr>";
+				htmlText += "<td>" + arr[i].id + "</td> \t";
+				htmlText += "<td>" + arr[i].vorname + "</td>\t";
+				htmlText += "<td>" + arr[i].nachname + "</td>";
+				htmlText += "<td> <button onclick='deleteRow("+ arr[i].id+")'> Löschen </button> </td>";
+				htmlText += "<td> <button onclick=updateRow("+arr[i].id+",'"+arr[i].vorname+"','"+arr[i].nachname+"')> Aktualisieren </button> </td>";
+				htmlText += "</tr>"
+			}
+			htmlText += "</table>";
+			document.getElementById("tabelle").innerHTML = htmlText;
+		}
+
+		function init() {
+			openDB();
+			db.transaction(createTable);
+			db.transaction(getAllKontakte);
+
+		}
+		function deleteRow(id){
+			db.transaction(
+				function(tx){
+					tx.executeSql("DELETE FROM Kontakte where id=?",[id],getAllKontakte,SQLFail);
+				}
+			)
+		}
+		function updateRow(id,vorname,nachname){
+			
+			sessionStorage.setItem("updateID",id);
+			db.transaction(
+				function(tx){
+					tx.executeSql("SELECT * FROM Kontakte",[],UpdateView,SQLFail)
+				}
+			)
+						
+		}
+		function save(){
+			let id = document.getElementById("UserId").innerHTML;
+			let vorname = document.getElementById("editvorname").value;
+			let nachname = document.getElementById("editnachname").value;
+			console.log(vorname);
+			db.transaction(
+				function(tx){
+					tx.executeSql("UPDATE Kontakte set vorname= ?, nachname =? where id=?",[vorname,nachname,id],getAllKontakte,SQLFail);
+					
+				}
+			)
+		}
+
+		function UpdateView(tx,res){
+			let id = sessionStorage.getItem("updateID");
+			let htmlText = "<table>"
+			console.log(res.rows);
+			let arr = res.rows;
+			for (let i = 0; i < arr.length; i++) {
+				if(id != arr[i].id){
+				htmlText += "<tr>";
+				htmlText += "<td>" + arr[i].id + "</td> \t";
+				htmlText += "<td>" + arr[i].vorname + "</td>\t";
+				htmlText += "<td>" + arr[i].nachname + "</td>";
+				htmlText += "<td> <button onclick='deleteRow("+ arr[i].id+")'> Löschen </button> </td>";
+				htmlText += "<td> <button onclick=updateRow("+arr[i].id+",'"+arr[i].vorname+"','"+arr[i].nachname+"')> Aktualisieren </button> </td>";
+				htmlText += "</tr>"
+				}else{
+					htmlText += "<tr>";
+					htmlText += "<td id='UserId'>"+arr[i].id+"</td> \t";
+					htmlText += "<td><input type='text'  id='editvorname' style='width:90px; border-radius:4px' value="+arr[i].vorname+"><td>\t";
+					htmlText += "<td><input type='text'  id='editnachname' style='width:90px; border-radius:4px' value="+arr[i].nachname+"></td>";
+					htmlText += "<td> <button onclick=save()> Aktualisieren </button> </td>";
+					htmlText += "</tr>"
+				}
+			}
+			htmlText += "</table>";
+			document.getElementById("tabelle").innerHTML = htmlText;
+		}
+	</script>
+</head>
+
+<body onload="hideOthers('home');">
+
+	<div id="header">
+		<img id="logo" src="https://www.mci.edu/templates/mci/images/logo-white.svg">
+		WebSQL</div>
+	<div id="row2">
+		<div id="nav">
+			<p><a href="#" class="button" onclick="hideOthers('home');">Home</a></p>
+			<p><a href="#" class="button" onclick="hideOthers('create');">Create</a></p>
+			<p><a href="#" class="button" onclick="hideOthers('listing');">Listing</a></p>
+		</div>
+		<div id="main">
+			<!-- home DIV -->
+			<div id="home">
+				<h1>Web SQL Databases</h1>
+				<p>The Web SQL Database API isn't actually part of the HTML5 specification but it is a separate
+					specification which introduces a set of APIs to manipulate client-side databases using SQL.</p>
+				<p>Die komplette Spezifikation gibt es unter: <a
+						href="http://www.w3.org/TR/webdatabase/">http://www.w3.org/TR/webdatabase/</a></p>
+			</div>
+			<!-- create DIV -->
+			<div id="create">
+				<h1>Datensatz anlegen</h1>
+				<label for="vorname"> Geben Sie Ihren Vorname ein:</label>
+				<input type="text" id="vorname" name="vorname"><br>
+				<label for="nachname"> Geben Sie Ihren Nachname ein:</label>
+				<input type="text" id="nachname" name="nachname"><br>
+				<button onclick="db.transaction(addKonatke)">Daten Speichern</button>
+			</div>
+			<!-- listing, update, delete DIV -->
+			<div id="listing">
+				
+				
+				<div id="tabelle">
+
+				</div>
+				<h1>vorhandene Datens&auml;tze in DB</h1>
+			</div>
+		</div>
+	</div>
+	<div id="footer">(c) 2020 Hasenjäger & Pfurtscheller</div>
+
+
+
+</body>
+
+</html>

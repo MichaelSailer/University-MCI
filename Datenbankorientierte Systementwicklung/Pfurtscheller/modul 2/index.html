@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        function hideOthers(obj){
+            let fenster = new Array("home","create","listing")
+            let temp = null;
+            for(let i =0; i< fenster.length; i++){
+                temp = fenster[i];
+                let ele = document.getElementById(temp);
+                if(ele){
+                    if(obj != temp){
+                        ele.style.visibility = "hidden";
+                    }else{
+                        ele.style.visibility = "visible";
+                    }
+                }
+            }
+        }
+
+    </script>
+
+<body>
+    <div id="home">
+
+    </div>
+    <div id="create"></div>
+
+    <div id="listing"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+
+<body onload="openDB()">
+
+
+    <div id="tabelle"></div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <a href="addData.html" class="btn btn-outline-secondary">Neue Daten hinzufügen</a>
+                <a href="updateData.html" class="btn btn-outline-secondary">Daten aktualisieren</a>
+                <button onclick="deleteData()" class="btn btn-outline-secondary">Löschen</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../model/technicalData.js"></script>
+    <script src="../controller/database/websql.js"></script>
+</body>
+
+</html>

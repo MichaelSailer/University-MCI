@@ -179,13 +179,16 @@ function getTechnischeData(){
                 schadestoffeinstufung : result.rows[i].schadestoffeinstufung,
                 effizientklasse : result.rows[i].effizientklasse
                 }
-                sessionStorage.zwischenSpeicher = JSON.stringify(daten);
+                return daten;
             }
+            console.log(technischeDaten[0])
         },(tx,err) => {
             console.log(err.message)
         })
     })
-    technischeDaten.push(JSON.parse(sessionStorage.zwischenSpeicher))
-    return technischeDaten[0]
 }
 
+
+
+
+console.log( getTechnischeData())

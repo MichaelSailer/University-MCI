@@ -1,0 +1,62 @@
+#ueberschrift{
+    background-color: #F7882F;
+    color: #6B7A8F;
+    margin-top: 45px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 3px;
+    padding-left: 3px;
+    height:60px;
+}
+
+#haupteil{
+    color: #6B7A8F;
+    text-align: justify;
+    margin: 15px;
+    font-size: 20px;
+}
+
+#bild1{
+    width: 400px;
+    height: 250px;
+    border-left: 10px solid;
+    border-color: #F7C331;
+    float: right;
+    margin: 5px;
+    
+}
+
+#bild2{
+    width: 400px;
+    height: 250px;
+    border-right: 10px solid;
+    border-color: #F7882F;
+    float: left;
+    margin: 5px;
+}
+#absatz1Geschichte{
+     margin-top: 30px;
+}
+
+#absatz2Geschichte{
+    margin-top: 20px;
+}
+
+#absatz1Innenraum{
+    margin-top: 50px;
+}
+
+#absatz2Innenraum{
+    margin-top: 30px;
+}
+
+#absatz1Kofferraum{
+    margin-top: 50px;
+}
+
+#absatz2Kofferraum{
+    margin-top: 50px;
+}
+
+

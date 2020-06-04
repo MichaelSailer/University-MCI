@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body onload="openDB()">
+    
+    <label for="">Hubraum</label>
+    <input type="text" id="hubraum"><br>
+    <label for="">Baujahr</label>
+    <input type="text" id="baujahr"><br>
+    <label for="">Leergewicht</label>
+    <input type="text" id="leergewicht"><br>
+    <label for="">Von 0 auf 100</label>
+    <input type="text" id="null_hundert"><br>
+    <label for="">Standgeräusch</label>
+    <input type="text" id="standgeräusch"><br>
+    <label for="">Kraftstoff</label>
+    <input type="text" id="kraftstoff"><br>
+    <label for="">Schadestoffklassen</label>
+    <input type="text" id="schadenstoffklassen"><br>
+    <label for="">Höhstgeschwindigkeit</label>
+    <input type="text" id="höhstgeschwindigkeit"><br>
+    <button onclick="checkIfEmpty()">Hinzufügen</button>
+    <a href="index.html">Zurück</a>
+
+    <script src="../model/technicalData.js"></script>
+    <script src="../controller/database/websql.js"></script>
+</body>
+</html>

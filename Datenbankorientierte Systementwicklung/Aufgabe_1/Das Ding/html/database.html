@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Document</title>
+</head>
+
+<body onload="createAdmin()">
+    <nav class="nav">
+        <div id="nav-logo">
+            <i class="fas fa-arrow-circle-right"></i>
+        </div>
+        <ul class="nav-link">
+            <li>
+                <span class="symbol"> <i class="fas fa-home"></i></span><a href="index.html"> Home</a>
+            </li>
+        </ul>
+        <ul class="nav-link">
+            <li>
+                <span class="symbol"><i class="fas fa-pencil-ruler"></i></span><a href="technischeDaten.html">
+                    Technische Daten</a>
+            </li>
+        </ul>
+        <ul class="nav-link">
+            <li>
+                <span class="symbol">
+                    <i class="large material-icons">description</i> </span><a href="#">Geschichte</a>
+            </li>
+        </ul>
+        <ul class="nav-link">
+            <li>
+                <span class="symbol">
+                    <i class="large material-icons">exit_to_app</i> </span><a href="#">Innenraum</a>
+            </li>
+        </ul>
+        <ul class="nav-link">
+            <li>
+                <span class="symbol">
+                    <i class="large material-icons">directions_car</i> </span><a href="#">Kofferraum</a>
+            </li>
+        </ul>
+        <ul class="nav-link">
+            <li>
+                <span class="symbol">
+                    <i class="large material-icons">euro_symbol</i> </span><a href="#">Anschaffung</a>
+            </li>
+        </ul>
+        <ul class="nav-link">
+            <li>
+                <span class="symbol"> <i class="fa fa-address-card"></i> </span><a href="impressum.html">Impressum</a>
+            </li>
+        </ul>
+        <ul class="nav-link">
+            <li>
+                <span class="symbol"><i class="fa fa-database"></i></span><a href="database.html">Datenbank</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <div id="dbTabelle"></div>
+        <div class="tabellenButton" id="buttons">
+            <button onclick="datenHinzufügen()">Neue Daten hinzufügen</button>
+            <button onclick="datenLöschen()">Daten Löschen</button>
+            <button onclick="datenAktualisieren()">Daten Aktualisieren</button>
+        </div>
+    </div>
+
+    <div id="form">
+        <label for="Name" id="NLable">Geben Sie den Namen ein den Sie löschen wollen:</label>
+        <input type="text" name="Name" id="name">
+        <div id="deleteButtons">
+            <button id="btn_Entry">Löschen</button>
+            <button onclick="closeForm()">Schließen</button>
+        </div>
+    </div>
+    
+
+    <div id="login">
+        <label for="password">Geben Sie das Admin Passwort ein:</label>
+        <input type="password" name=" password" id="pw">
+        <button onclick="checkPassword()">Login</button>
+
+    </div>
+    <script src="../js/car.js"></script>
+    <script src="../js/database.js"></script>
+</body>
+
+</html>

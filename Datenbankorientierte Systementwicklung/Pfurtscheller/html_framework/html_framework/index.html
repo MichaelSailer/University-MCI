@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+  
+<head>
+  <meta charset="UTF-8">
+  <title>WebSQL | Datenbankorientiere Systementwicklung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript">
+	
+   function hideOthers(obj){
+		var navigationsleiste = new Array("home","create","listing");
+		var temp = null;
+		for(var i = 0; i < navigationsleiste.length; i++){
+		    temp = navigationsleiste[i];
+		    var element = document.getElementById(temp);
+		    if(element != null){
+			    if(obj != temp){
+						element.style.display = 'none';
+			    }
+			    else{
+						element.style.display = 'block';
+			    }
+			}
+		}
+   }
+</script>
+</head>
+
+<body onload="hideOthers('home');">
+
+  <div id="header">
+<img id="logo" src="https://www.mci.edu/templates/mci/images/logo-white.svg">  
+  WebSQL</div>
+<div id="row2">
+  <div id="nav">
+      <p><a href="#" class="button" onclick="hideOthers('home');">Home</a></p>
+    	<p><a href="#" class="button" onclick="hideOthers('create');">Create</a></p>
+    	<p><a href="#" class="button" onclick="hideOthers('listing');">Listing</a></p>
+  </div>
+  <div id="main">
+    <!-- home DIV -->
+		<div id="home">
+		    <h1>Web SQL Databases</h1>
+        <p>The Web SQL Database API isn't actually part of the HTML5 specification but it is a separate specification which introduces a set of APIs to manipulate client-side databases using SQL.</p>
+	      <p>Die komplette Spezifikation gibt es unter: <a href="http://www.w3.org/TR/webdatabase/">http://www.w3.org/TR/webdatabase/</a></p>
+		</div>
+    <!-- create DIV -->
+		<div id="create">
+			<h1>Datensatz anlegen</h1>
+		</div>
+		<!-- listing, update, delete DIV -->
+		<div id="listing" >
+			<h1>vorhandene Datens&auml;tze in DB</h1>
+		</div>
+  </div>
+</div>
+<div id="footer">(c) 2020 Hasenjäger & Pfurtscheller</div>
+  
+  
+
+</body>
+
+</html>

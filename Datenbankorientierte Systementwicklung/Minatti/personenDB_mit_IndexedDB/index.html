@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- Datenbankorientierte Systementwicklung -->
+<html>
+   <head>
+	  <title>Web Storage mit IndexedDB</title>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	  <meta charset="utf-8">
+	  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+   </head>
+   <body onload="init()">
+	  
+
+			  <h1>Übungsbeispiel - Web Storage mit JSON</h1>
+			  
+			  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<nav class="navbar navbar-light bg-light">
+					  <input class="form-control mr-lg-2" id="search" placeholder="Search" aria-label="Search">
+					  <button class="btn btn-outline-success my-2 my-lg-0" onclick="searchUser()">Search</button>
+				  </nav>
+			  </nav>
+		  
+			  
+			 <table class="table table-hover" id="table">
+				 <!-- Wird dynamisch mit JS befüllt -->
+		     </table>
+		  
+			 <div class="row">
+			    <fieldset id="fieldset" class="card-body">
+				  <legend>Neuer Datensatz</legend>
+				  <div class="input-group mb-3 offset-lg-3 col-lg-5">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="basic-addon1"> 
+						<i class='fas fa-user-circle' style='font-size:24px'></i></span>
+					</div>
+					<input type="text" class="form-control " placeholder="Vorname"  id="vorname" aria-label="Vorname" aria-describedby="basic-addon1">
+				  </div>
+				  <div class="input-group mb-3  offset-lg-3 col-lg-5">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="basic-addon1"><i class='fas fa-user-circle' style='font-size:24px'></i></span>
+					</div>
+					<input type="text" class="form-control" placeholder="Nachname" id="nachname" aria-label="Vorname" aria-describedby="basic-addon1">
+				  </div>
+				  <div class="input-group mb-3 3  offset-lg-3 col-lg-5">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="basic-addon1"><i class='fas fa-calendar-alt' style='font-size:24px'></i></span>
+					</div>
+					<input type="date" class="form-control" placeholder="Geburtstag" id="geburtstag" aria-label="Vorname" aria-describedby="basic-addon1">
+				  </div>
+				  <div class="input-group mb-3 offset-lg-3 col-lg-5">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="basic-addon1"><i class="fas fa-weight" style='font-size:24px'></i></span>
+					</div>
+					<input type="number" class="form-control" placeholder="Gewicht" id="gewicht" aria-label="Vorname" aria-describedby="basic-addon1">
+				  </div>
+				  <div class="input-group md-1 offset-lg-3 col-lg-5">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="basic-addon1"><i class="fas fa-ruler-vertical" style="font-size: 24px; width: 25px;"></i></span>
+					</div>
+					<input type="number" class="form-control" placeholder="Größe" id="groesse" aria-label="Vorname" aria-describedby="basic-addon1">
+				  </div>
+				</div>
+
+ 		         <button onclick="saveData()" class="btn btn-outline-dark offset-lg-4 ">Neuen Datensatz speichern</button>
+				</fieldset>
+
+				
+					   
+		
+      <!-- Javascript Code -->
+      <script src="app.js"></script>
+			
+			
+                  
+   </body>
+</html>
